@@ -31,10 +31,10 @@ html {
 
 /* 왼쪽 기능 설정 */
 .temp-side {
-    float: left;
-    display: flex;
-    align-items: flex-end;
-    margin: 550px 0 0 50px;
+    position: absolute;
+    left: 0px;
+    bottom: 0px;
+    
     color: #F5F2E7;
 }
 
@@ -46,10 +46,6 @@ html {
 .now-city {
     font-size: 50px;
     margin: 0 30px;
-}
-
-.now-weather {
-    background-image: ;
 }
 
 /* 오른쪽 기능 설정 */

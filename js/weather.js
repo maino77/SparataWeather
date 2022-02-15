@@ -83,7 +83,7 @@ function onGeoOk(position){
         const city_name = document.getElementById("city_info") // 현재 온도
         
         city_name.innerText = data.name;
-        cur_temp.innerText = data.main.temp.toFixed(1)
+        cur_temp.innerText = `${data.main.temp.toFixed(1)} ℃`
         feels_like.innerText = data.main.feels_like.toFixed(1)
         temp_min.innerText = data.main.temp_min.toFixed(1)
         temp_max.innerText = data.main.temp_max.toFixed(1)
