@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Document</title>
     <link rel="stylesheet" href="./css/style.css">
     <!-- jQuery -->
@@ -14,10 +15,9 @@
         <!-- 왼쪽  -->
         <div class="temp-side">
             <div class="now-temp">
-                8℃
+                <span id="cur_temp_info"></span> ℃
             </div>
-            <div class="now-city">
-                Seoul
+            <div class="now-city" id="city_info">  
             </div>
             <div class="now-weather">
             </div>
@@ -27,7 +27,7 @@
             <div class="weather-side">
                 <div class="dropdown">
                     <form>
-                        <select name="city" class="cities">
+                        <select name="city" class="cities" id="selectGeo">
                             <option value="현위치">현위치</option>
                             <option value="서울">서울</option>
                             <option value="강릉">강릉</option>
@@ -49,22 +49,22 @@
                 </div>
                 <table>
                     <thead>
-                    <tr>
+                    <tr class="clock">
                         <td class="info">2022년 02월 12일</td>
                     </tr>
                     </thead>
                     <tbody>
                     <tr>
                         <td class="info">체감 온도</td>
-                        <td class="temp">10℃</td>
+                        <td class="temp"> <span id="feel_temp_info"></span> ℃</td>
                     </tr>
                     <tr>
                         <td class="info">최저 / 최고 온도</td>
-                        <td class="temp">-1℃ / 9℃</td>
+                        <td class="temp"><span id="min_temp_info"></span>℃ / <span id="max_temp_info"></span>℃</td>
                     </tr>
                     <tr>
-                        <td class="info">강수량</td>
-                        <td class="temp">80%</td>
+                        <td class="info">습도</td>
+                        <td class="temp"><span id="humidity_info"></span>%</td>
                     </tr>
                     </tbody>
                 </table>
@@ -72,5 +72,7 @@
         </div>
     </div>
     <script type="text/javascript" src="./js/weather.js"></script>
+    <script type="text/javascript" src="./js/date.js"></script>
+
 </body>
 </html>
