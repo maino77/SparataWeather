@@ -110,7 +110,8 @@ function onGeoOk(position){
             weather_icon.classList.add(`wi-day-sunny`)
             
             // 배경화면 바꾸는 코드
-            $("#backimg").css({"background":"linear-gradient( rgba(0, 0, 0, 0.4),rgba(0, 0, 0, 0.4) ), url(../img/sunny.jpg)", 'background-repeat' : 'no-repeat', 'background-position':'center center'});
+            // $("#backimg").css({"background":"linear-gradient( rgba(0, 0, 0, 0.4),rgba(0, 0, 0, 0.4) ), url(../img/sunny.jpg) ", 'background-repeat' : 'no-repeat', 'background-position':'center center'});
+            $("#backimg").css({"background":"linear-gradient( rgba(0, 0, 0, 0.4),rgba(0, 0, 0, 0.4) ), url(../img/sunny.jpg) no-repeat center center fixed", '-webkit-background-size' : 'cover', '-moz-background-size':'cover', '-o-background-size':'cover', 'background-size':'cover'});
 
         } else if(cur_weather_icon === "02d"  || cur_weather_icon === "02n") { // 02d few clouds 구름 낀 해 wi-day-cloudy
             let weather_icon = document.getElementById("weather_icon_info")
