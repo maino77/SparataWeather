@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" id="backimg">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,16 +8,27 @@
     <title>Document</title>
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/mediaquery.css">
+
+    <!-- 날씨 아이콘 css -->
+    <link rel="stylesheet" href="./css/weather-icons-wind.css">
+    <link rel="stylesheet" href="./css/weather-icons-wind.min.css">
+    <link rel="stylesheet" href="./css/weather-icons.css">
+    <link rel="stylesheet" href="./css/weather-icons.min.css">
     <!-- jQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 <body>
     <div>
         <!-- 왼쪽  -->
-        <div class="temp-side">
+        <div class="temp-side" id="str_color">
             <span class="now-temp" id="cur_temp_info"></span>
             <span class="now-city" id="city_info"></span>
-            <!-- <div class="now-weather"></div> -->
+            <!-- icon 양식 -->
+            <!-- <i class="wi wi-snowflake-cold"></i> -->
+            <span class="now-city"><i id="weather_icon_info" class="now_weather_info"></i></span>
+            
+            <!-- Openweathermap API 아이콘 출력 코드(참고용) -->
+            <!-- <span id="icon"><img id="wicon" src="" alt="Weather icon"></span> -->
         </div>
         <!-- 오른쪽 -->
         <div class="blackbox">
@@ -52,16 +63,20 @@
                     </thead>
                     <tbody>
                     <tr>
-                        <td class="info">체감 온도</td>
-                        <td class="temp"> <span id="feel_temp_info"></span> ℃</td>
+                        <td class="info"><i class="wi wi-thermometer"></i> 체감 온도</td>
+                        <td class="temp" id="feel_temp_info"></td>
                     </tr>
                     <tr>
-                        <td class="info">최저 / 최고 온도</td>
-                        <td class="temp"><span id="min_temp_info"></span>℃ / <span id="max_temp_info"></span>℃</td>
+                        <td class="info"><i class="wi wi-sunrise"></i> 최저 / 최고 온도</i></td>
+                        <td class="temp" id="temp_min_max_info"></td>
                     </tr>
                     <tr>
-                        <td class="info">습도</td>
-                        <td class="temp"><span id="humidity_info"></span>%</td>
+                        <td class="info"><i class="wi wi-raindrop"></i> 습도</td>
+                        <td class="temp" id="humidity_info"></td>
+                    </tr>
+                    <tr>
+                        <td class="info"><i class="wi wi-strong-wind"></i> 풍속</td>
+                        <td class="temp" id="wind_info"></td>
                     </tr>
                     </tbody>
                 </table>

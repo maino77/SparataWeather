@@ -34,7 +34,6 @@ html {
     position: absolute;
     left: 0px;
     bottom: 0px;
-    
     color: #F5F2E7;
 }
 
@@ -45,7 +44,7 @@ html {
 
 .now-city {
     font-size: 50px;
-    margin: 0 30px;
+    margin-left: 30px;
 }
 
 /* 오른쪽 기능 설정 */
