@@ -18,14 +18,14 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 <body>
-    <div>
+    <div class="wrap">
         <!-- 왼쪽  -->
         <div class="temp-side" id="str_color">
             <span class="now-temp" id="cur_temp_info"></span>
             <span class="now-city" id="city_info"></span>
             <!-- icon 양식 -->
             <!-- <i class="wi wi-snowflake-cold"></i> -->
-            <span class="now-city"><i id="weather_icon_info" class="now_weather_info"></i></span>
+            <span class="now-icon"><i id="weather_icon_info" class="now_weather_info"></i></span>
             
             <!-- Openweathermap API 아이콘 출력 코드(참고용) -->
             <!-- <span id="icon"><img id="wicon" src="" alt="Weather icon"></span> -->
@@ -49,7 +49,8 @@
                 </div>
                 <div class="clothes-box">
                     <div class="clothes">
-
+                        <div class="first-clothes"></div>
+                        <div class="second-clothes"></div>
                     </div>
                     <div class="comment">
                         옷차림에 관한 문구
