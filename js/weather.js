@@ -118,16 +118,18 @@ function onGeoOk(position){
             weather_icon.className = `wi`
             weather_icon.classList.add(`wi-day-cloudy`)
             
-            $("#backimg").css({"background":"linear-gradient( rgba(0, 0, 0, 0.4),rgba(0, 0, 0, 0.4) ), url(../img/sunny.jpg)", 'background-repeat' : 'no-repeat', 'background-position':'center center'});
-            
+            // $("#backimg").css({"background":"linear-gradient( rgba(0, 0, 0, 0.4),rgba(0, 0, 0, 0.4) ), url(../img/sunny.jpg)", 'background-repeat' : 'no-repeat', 'background-position':'center center'});
+            $("#backimg").css({"background":"linear-gradient( rgba(0, 0, 0, 0.4),rgba(0, 0, 0, 0.4) ), url(../img/sunny.jpg) no-repeat center center fixed", '-webkit-background-size' : 'cover', '-moz-background-size':'cover', '-o-background-size':'cover', 'background-size':'cover'});
+
         } else if(cur_weather_icon === "03d" || cur_weather_icon === "03n") { // 03d scattered clouds 구름 wi-cloud
             let weather_icon = document.getElementById("weather_icon_info")
             weather_icon.className = `wi`
             weather_icon.classList.add(`wi-cloud`)
             
             
-            $("#backimg").css({"background":"linear-gradient( rgba(0, 0, 0, 0.4),rgba(0, 0, 0, 0.4) ), url(../img/cloudy.jpg)", 'background-repeat' : 'no-repeat', 'background-position':'center center'});
-            
+            // $("#backimg").css({"background":"linear-gradient( rgba(0, 0, 0, 0.4),rgba(0, 0, 0, 0.4) ), url(../img/cloudy.jpg)", 'background-repeat' : 'no-repeat', 'background-position':'center center'});
+            $("#backimg").css({"background":"linear-gradient( rgba(0, 0, 0, 0.4),rgba(0, 0, 0, 0.4) ), url(../img/cloudy.jpg) no-repeat center center fixed", '-webkit-background-size' : 'cover', '-moz-background-size':'cover', '-o-background-size':'cover', 'background-size':'cover'});
+
         } else if(cur_weather_icon === "04d" || cur_weather_icon === "04n") { // 04d broken clouds 먹구름 wi-cloudy
             console.log("Ok")
             let weather_icon = document.getElementById("weather_icon_info")
@@ -135,43 +137,44 @@ function onGeoOk(position){
             weather_icon.classList.add(`wi-cloudy`)
             
             
-            $("#backimg").css({"background":"linear-gradient( rgba(0, 0, 0, 0.4),rgba(0, 0, 0, 0.4) ), url(../img/cloudy.jpg)", 'background-repeat' : 'no-repeat', 'background-position':'center center'});
-            
+            // $("#backimg").css({"background":"linear-gradient( rgba(0, 0, 0, 0.4),rgba(0, 0, 0, 0.4) ), url(../img/cloudy.jpg)", 'background-repeat' : 'no-repeat', 'background-position':'center center'});
+            $("#backimg").css({"background":"linear-gradient( rgba(0, 0, 0, 0.4),rgba(0, 0, 0, 0.4) ), url(../img/cloudy.jpg) no-repeat center center fixed", '-webkit-background-size' : 'cover', '-moz-background-size':'cover', '-o-background-size':'cover', 'background-size':'cover'});
         } else if(cur_weather_icon === "09d" || cur_weather_icon === "09n") { // 09d shower rain 구름 비 wi-rain
             let weather_icon = document.getElementById("weather_icon_info")
             weather_icon.className = `wi`
             weather_icon.classList.add(`wi-rain`)
             
             
-            $("#backimg").css({"background":"linear-gradient( rgba(0, 0, 0, 0.4),rgba(0, 0, 0, 0.4) ), url(../img/rain.jpg)", 'background-repeat' : 'no-repeat', 'background-position':'center center'});
-            
+            // $("#backimg").css({"background":"linear-gradient( rgba(0, 0, 0, 0.4),rgba(0, 0, 0, 0.4) ), url(../img/rain.jpg)", 'background-repeat' : 'no-repeat', 'background-position':'center center'});
+            $("#backimg").css({"background":"linear-gradient( rgba(0, 0, 0, 0.4),rgba(0, 0, 0, 0.4) ), url(../img/rain.jpg) no-repeat center center fixed", '-webkit-background-size' : 'cover', '-moz-background-size':'cover', '-o-background-size':'cover', 'background-size':'cover'});
         } else if(cur_weather_icon === "10d" || cur_weather_icon === "10n") { // 10d 비 (해, 비) wi-umbrella
             let weather_icon = document.getElementById("weather_icon_info")
             weather_icon.className = `wi`
             weather_icon.classList.add(`wi-umbrella`)
             
-            $("#backimg").css({"background":"linear-gradient( rgba(0, 0, 0, 0.4),rgba(0, 0, 0, 0.4) ), url(../img/rain.jpg)", 'background-repeat' : 'no-repeat', 'background-position':'center center'});
-            
+            // $("#backimg").css({"background":"linear-gradient( rgba(0, 0, 0, 0.4),rgba(0, 0, 0, 0.4) ), url(../img/rain.jpg)", 'background-repeat' : 'no-repeat', 'background-position':'center center'});
+            $("#backimg").css({"background":"linear-gradient( rgba(0, 0, 0, 0.4),rgba(0, 0, 0, 0.4) ), url(../img/rain.jpg) no-repeat center center fixed", '-webkit-background-size' : 'cover', '-moz-background-size':'cover', '-o-background-size':'cover', 'background-size':'cover'});
         } else if(cur_weather_icon === "11d" || cur_weather_icon === "11n") { // 11d 번개, 천둥 wi-lightning
             let weather_icon = document.getElementById("weather_icon_info")
             weather_icon.className = `wi`
             weather_icon.classList.add(`wi-lightning`)
             
-            $("#backimg").css({"background":"linear-gradient( rgba(0, 0, 0, 0.4),rgba(0, 0, 0, 0.4) ), url(../img/rain.jpg)", 'background-repeat' : 'no-repeat', 'background-position':'center center'});
-            
+            // $("#backimg").css({"background":"linear-gradient( rgba(0, 0, 0, 0.4),rgba(0, 0, 0, 0.4) ), url(../img/rain.jpg)", 'background-repeat' : 'no-repeat', 'background-position':'center center'});
+            $("#backimg").css({"background":"linear-gradient( rgba(0, 0, 0, 0.4),rgba(0, 0, 0, 0.4) ), url(../img/rain.jpg) no-repeat center center fixed", '-webkit-background-size' : 'cover', '-moz-background-size':'cover', '-o-background-size':'cover', 'background-size':'cover'});
         } else if(cur_weather_icon === "13d" || cur_weather_icon === "13n") { // 13d 눈 wi-snowflake-cold
             let weather_icon = document.getElementById("weather_icon_info")
             weather_icon.className = `wi`
             weather_icon.classList.add(`wi-snowflake-cold`)
             
-            $("#backimg").css({"background":"linear-gradient( rgba(0, 0, 0, 0.4),rgba(0, 0, 0, 0.4) ), url(../img/snow.jpg)", 'background-repeat' : 'no-repeat', 'background-position':'center center'});
-
+            // $("#backimg").css({"background":"linear-gradient( rgba(0, 0, 0, 0.4),rgba(0, 0, 0, 0.4) ), url(../img/snow.jpg)", 'background-repeat' : 'no-repeat', 'background-position':'center center'});
+            $("#backimg").css({"background":"linear-gradient( rgba(0, 0, 0, 0.4),rgba(0, 0, 0, 0.4) ), url(../img/snow.jpg) no-repeat center center fixed", '-webkit-background-size' : 'cover', '-moz-background-size':'cover', '-o-background-size':'cover', 'background-size':'cover'});
         } else if(cur_weather_icon === "50d"  || cur_weather_icon === "50n") { // 50d mist 안개 wi-dust
             let weather_icon = document.getElementById("weather_icon_info")
             weather_icon.className = `wi`
             weather_icon.classList.add(`wi-dust`)
             
-            $("#backimg").css({"background":"linear-gradient( rgba(0, 0, 0, 0.4),rgba(0, 0, 0, 0.4) ), url(../img/cloudy.jpg)", 'background-repeat' : 'no-repeat', 'background-position':'center center'});
+            // $("#backimg").css({"background":"linear-gradient( rgba(0, 0, 0, 0.4),rgba(0, 0, 0, 0.4) ), url(../img/cloudy.jpg)", 'background-repeat' : 'no-repeat', 'background-position':'center center'});
+            $("#backimg").css({"background":"linear-gradient( rgba(0, 0, 0, 0.4),rgba(0, 0, 0, 0.4) ), url(../img/cloudy.jpg) no-repeat center center fixed", '-webkit-background-size' : 'cover', '-moz-background-size':'cover', '-o-background-size':'cover', 'background-size':'cover'});
         }
     
 
