@@ -103,7 +103,8 @@ html {
     width: 150px;
     height: 200px;
 
-    background-image: url("../img/winter_1.png");
+    /* background-image: url("../img/winter_1.png"); */
+    background-image: url("");
     background-position: center;
     background-size: contain;
     background-repeat: no-repeat;
@@ -115,7 +116,8 @@ html {
     width: 150px;
     height: 200px;
 
-    background-image: url("../img/winter_2.png");
+    /* background-image: url("../img/winter_2.png"); */
+    background-image: url("");
     background-position: center;
     background-size: contain;
     background-repeat: no-repeat;

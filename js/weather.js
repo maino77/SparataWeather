@@ -172,30 +172,50 @@ function onGeoOk(position){
         let now_temp = Number(data.main.temp.toFixed(1))
         if( now_temp >= 25){
             const first_clothes = document.getElementsByClassName("first-clothes")[0]
-            // first_clothes.
+            const second_clothes = document.getElementsByClassName("second-clothes")[0]
+            first_clothes.style.backgroundImage = "url(../img/summer_1.png)"
+            second_clothes.style.backgroundImage = "url(../img/summer_2.png)"
+            
             
             const desc_cloth = document.getElementsByClassName("comment")[0]
             desc_cloth.innerText = "반팔 반바지 \n 최대한 얇게 입는 것이 좋습니다. \n #자외선_차단제 #양산"
 
         } else if(25 > now_temp && 20 <= now_temp){
+            const first_clothes = document.getElementsByClassName("first-clothes")[0]
+            const second_clothes = document.getElementsByClassName("second-clothes")[0]
+            first_clothes.style.backgroundImage = "url(../img/spring_1.png)"
+            second_clothes.style.backgroundImage = "url(../img/spring_2.png)"
 
             const desc_cloth = document.getElementsByClassName("comment")[0]
             desc_cloth.innerText = "원피스 셔츠 \n 옷 코디하기 좋은 기온으로 조금 서늘합니다. \n #얇은_가디건"
 
         } else if(20 > now_temp && 12 <= now_temp){
+            const first_clothes = document.getElementsByClassName("first-clothes")[0]
+            const second_clothes = document.getElementsByClassName("second-clothes")[0]
+            first_clothes.style.backgroundImage = "url(../img/fall_1.png)"
+            second_clothes.style.backgroundImage = "url(../img/fall_2.png)"
 
             const desc_cloth = document.getElementsByClassName("comment")[0]
             desc_cloth.innerText = "셔츠 맨투맨 \n  일교차가 커서 얇은 외투 착용을 권장합니다. \n #감기조심하세요"
 
         } else if(12 > now_temp && 6 <= now_temp){
+            const first_clothes = document.getElementsByClassName("first-clothes")[0]
+            const second_clothes = document.getElementsByClassName("second-clothes")[0]
+            first_clothes.style.backgroundImage = "url(../img/extra_1.png)"
+            second_clothes.style.backgroundImage = "url(../img/extra_2.png)"
 
             const desc_cloth = document.getElementsByClassName("comment")[0]
             desc_cloth.innerText = "코트 후드집업 \n 몸이 따뜻하도록 내의를 착용해주세요. \n #트랜치_코트는_지금"
             
         } else if (6 > now_temp){
-            
+            const first_clothes = document.getElementsByClassName("first-clothes")[0]
+            const second_clothes = document.getElementsByClassName("second-clothes")[0]
+            first_clothes.style.backgroundImage = "url(../img/winter_1.png)"
+            second_clothes.style.backgroundImage = "url(../img/winter_2.png)"
+
+
             const desc_cloth = document.getElementsByClassName("comment")[0]
-            desc_cloth.innerText = "패딩 긴바지 \n 패딩을 권장합니다. 최대한 껴입어주세요! \n #경량_패딩 #목도리 #기모_바지"
+            desc_cloth.innerText = "점퍼 패딩 \n 패딩을 권장합니다. 최대한 껴입어주세요! \n #경량_패딩 #점퍼 #목도리"
         }
 
         // openweathermap API 아이콘 처리 (참고용) (이모티콘 코드와 같이 쓸 수 없음 둘 중 하나 선택)
