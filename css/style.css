@@ -20,6 +20,7 @@ html {
 
 * {
     font-family: GmarketSansLight;
+    color: #F5F2E7;
 }
 
 
@@ -28,6 +29,12 @@ html {
       margin: 0;
       padding: 0;
   }
+
+/*모든 a태그 효과 삭제*/
+a {
+  text-decoration: none;
+  color: #F5F2E7;
+}
 
 /* 왼쪽 기능 설정 */
 .temp-side {
@@ -61,6 +68,18 @@ html {
     height: inherit;
 
     color: #F5F2E7;
+}
+
+.nav {
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    position: fixed;
+    top: 0;
+
+    width: 400px;
+    padding: 10px 100px;
 }
 
 .clothes-box {
