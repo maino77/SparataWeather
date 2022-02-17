@@ -1,4 +1,6 @@
 /* 로딩 관련 css */
+/* _position에 관련하여 참고 주소 */
+/* https://stackoverflow.com/questions/18106356/what-does-an-underscore-mean-in-css/18106420 */
 #loading {
 	height: 100%;
 	left: 0px;

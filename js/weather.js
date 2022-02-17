@@ -1,19 +1,3 @@
-
-// 로딩 페이지 js
-// https://shanepark.tistory.com/148
-$(function(){
-    
-	let loading = $('<div id="loading" class="loading"><img id="loading_img" alt="loading" src="/resources/images/loading/ajax-loader.gif" /></div>')
-			.appendTo(document.body).hide();
-	
-	$(window).ajaxStart(function(){
-		loading.show();
-	}).ajaxStop(function(){
-		loading.hide();
-	});
-});
-
-
 const API_KEY = "9730934379c4806648360d3cc00d8894";
 
 function onGeoOk(position){
@@ -187,6 +171,8 @@ function onGeoOk(position){
         // 이후 innerText로 삽입. 이때 \n 으로 줄바꿈
         let now_temp = Number(data.main.temp.toFixed(1))
         if( now_temp >= 25){
+            const first_clothes = document.getElementsByClassName("first-clothes")[0]
+            // first_clothes.
             
             const desc_cloth = document.getElementsByClassName("comment")[0]
             desc_cloth.innerText = "반팔 반바지 \n 최대한 얇게 입는 것이 좋습니다. \n #자외선_차단제 #양산"
