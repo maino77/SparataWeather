@@ -1,3 +1,4 @@
+/*1350px보다 작아졌을 때*/
 @media (max-width: 1350px) {
     .wrap {
         display: flex;
@@ -10,7 +11,6 @@
         background-color: rgba(0, 0, 0, 0.5);
         width: 600px;
         text-align: center;
-        padding-bottom: 20px;
     }
 
     .now-temp {
@@ -23,5 +23,9 @@
 
     .now-icon {
         font-size: 40px;
+    }
+
+    .blackbox {
+        height: 90vh;
     }
 }
