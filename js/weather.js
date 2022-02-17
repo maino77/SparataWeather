@@ -97,12 +97,10 @@ function onGeoOk(position){
         humidity.innerText = `${data.main.humidity} %` // 습도
         wind_speed.innerText = `${data.wind.speed} m/s` // 풍속
 
-            console.log(data.weather[0].icon)
         // 아이콘 코드
         // 아이콘 코드에 따른 i값 class 변화
         // icon className 수정
         // className은 태그가 가진 class 초기화 후 변경
-
         let cur_weather_icon = data.weather[0].icon
         if (cur_weather_icon === "01d" || cur_weather_icon === "01n"){ // 01d claer sky 맑은 해  wi-day-sunny
             let weather_icon = document.getElementById("weather_icon_info")
@@ -110,7 +108,6 @@ function onGeoOk(position){
             weather_icon.classList.add(`wi-day-sunny`)
             
             // 배경화면 바꾸는 코드
-            // $("#backimg").css({"background":"linear-gradient( rgba(0, 0, 0, 0.4),rgba(0, 0, 0, 0.4) ), url(../img/sunny.jpg) ", 'background-repeat' : 'no-repeat', 'background-position':'center center'});
             $("#backimg").css({"background":"linear-gradient( rgba(0, 0, 0, 0.4),rgba(0, 0, 0, 0.4) ), url(../img/sunny.jpg) no-repeat center center fixed", '-webkit-background-size' : 'cover', '-moz-background-size':'cover', '-o-background-size':'cover', 'background-size':'cover'});
 
         } else if(cur_weather_icon === "02d"  || cur_weather_icon === "02n") { // 02d few clouds 구름 낀 해 wi-day-cloudy
@@ -118,7 +115,6 @@ function onGeoOk(position){
             weather_icon.className = `wi`
             weather_icon.classList.add(`wi-day-cloudy`)
             
-            // $("#backimg").css({"background":"linear-gradient( rgba(0, 0, 0, 0.4),rgba(0, 0, 0, 0.4) ), url(../img/sunny.jpg)", 'background-repeat' : 'no-repeat', 'background-position':'center center'});
             $("#backimg").css({"background":"linear-gradient( rgba(0, 0, 0, 0.4),rgba(0, 0, 0, 0.4) ), url(../img/sunny.jpg) no-repeat center center fixed", '-webkit-background-size' : 'cover', '-moz-background-size':'cover', '-o-background-size':'cover', 'background-size':'cover'});
 
         } else if(cur_weather_icon === "03d" || cur_weather_icon === "03n") { // 03d scattered clouds 구름 wi-cloud
@@ -126,58 +122,79 @@ function onGeoOk(position){
             weather_icon.className = `wi`
             weather_icon.classList.add(`wi-cloud`)
             
-            
-            // $("#backimg").css({"background":"linear-gradient( rgba(0, 0, 0, 0.4),rgba(0, 0, 0, 0.4) ), url(../img/cloudy.jpg)", 'background-repeat' : 'no-repeat', 'background-position':'center center'});
             $("#backimg").css({"background":"linear-gradient( rgba(0, 0, 0, 0.4),rgba(0, 0, 0, 0.4) ), url(../img/cloudy.jpg) no-repeat center center fixed", '-webkit-background-size' : 'cover', '-moz-background-size':'cover', '-o-background-size':'cover', 'background-size':'cover'});
 
         } else if(cur_weather_icon === "04d" || cur_weather_icon === "04n") { // 04d broken clouds 먹구름 wi-cloudy
-            console.log("Ok")
             let weather_icon = document.getElementById("weather_icon_info")
             weather_icon.className = `wi`
             weather_icon.classList.add(`wi-cloudy`)
             
-            
-            // $("#backimg").css({"background":"linear-gradient( rgba(0, 0, 0, 0.4),rgba(0, 0, 0, 0.4) ), url(../img/cloudy.jpg)", 'background-repeat' : 'no-repeat', 'background-position':'center center'});
             $("#backimg").css({"background":"linear-gradient( rgba(0, 0, 0, 0.4),rgba(0, 0, 0, 0.4) ), url(../img/cloudy.jpg) no-repeat center center fixed", '-webkit-background-size' : 'cover', '-moz-background-size':'cover', '-o-background-size':'cover', 'background-size':'cover'});
         } else if(cur_weather_icon === "09d" || cur_weather_icon === "09n") { // 09d shower rain 구름 비 wi-rain
             let weather_icon = document.getElementById("weather_icon_info")
             weather_icon.className = `wi`
             weather_icon.classList.add(`wi-rain`)
             
-            
-            // $("#backimg").css({"background":"linear-gradient( rgba(0, 0, 0, 0.4),rgba(0, 0, 0, 0.4) ), url(../img/rain.jpg)", 'background-repeat' : 'no-repeat', 'background-position':'center center'});
             $("#backimg").css({"background":"linear-gradient( rgba(0, 0, 0, 0.4),rgba(0, 0, 0, 0.4) ), url(../img/rain.jpg) no-repeat center center fixed", '-webkit-background-size' : 'cover', '-moz-background-size':'cover', '-o-background-size':'cover', 'background-size':'cover'});
         } else if(cur_weather_icon === "10d" || cur_weather_icon === "10n") { // 10d 비 (해, 비) wi-umbrella
             let weather_icon = document.getElementById("weather_icon_info")
             weather_icon.className = `wi`
             weather_icon.classList.add(`wi-umbrella`)
             
-            // $("#backimg").css({"background":"linear-gradient( rgba(0, 0, 0, 0.4),rgba(0, 0, 0, 0.4) ), url(../img/rain.jpg)", 'background-repeat' : 'no-repeat', 'background-position':'center center'});
             $("#backimg").css({"background":"linear-gradient( rgba(0, 0, 0, 0.4),rgba(0, 0, 0, 0.4) ), url(../img/rain.jpg) no-repeat center center fixed", '-webkit-background-size' : 'cover', '-moz-background-size':'cover', '-o-background-size':'cover', 'background-size':'cover'});
         } else if(cur_weather_icon === "11d" || cur_weather_icon === "11n") { // 11d 번개, 천둥 wi-lightning
             let weather_icon = document.getElementById("weather_icon_info")
             weather_icon.className = `wi`
             weather_icon.classList.add(`wi-lightning`)
             
-            // $("#backimg").css({"background":"linear-gradient( rgba(0, 0, 0, 0.4),rgba(0, 0, 0, 0.4) ), url(../img/rain.jpg)", 'background-repeat' : 'no-repeat', 'background-position':'center center'});
             $("#backimg").css({"background":"linear-gradient( rgba(0, 0, 0, 0.4),rgba(0, 0, 0, 0.4) ), url(../img/rain.jpg) no-repeat center center fixed", '-webkit-background-size' : 'cover', '-moz-background-size':'cover', '-o-background-size':'cover', 'background-size':'cover'});
         } else if(cur_weather_icon === "13d" || cur_weather_icon === "13n") { // 13d 눈 wi-snowflake-cold
             let weather_icon = document.getElementById("weather_icon_info")
             weather_icon.className = `wi`
             weather_icon.classList.add(`wi-snowflake-cold`)
             
-            // $("#backimg").css({"background":"linear-gradient( rgba(0, 0, 0, 0.4),rgba(0, 0, 0, 0.4) ), url(../img/snow.jpg)", 'background-repeat' : 'no-repeat', 'background-position':'center center'});
             $("#backimg").css({"background":"linear-gradient( rgba(0, 0, 0, 0.4),rgba(0, 0, 0, 0.4) ), url(../img/snow.jpg) no-repeat center center fixed", '-webkit-background-size' : 'cover', '-moz-background-size':'cover', '-o-background-size':'cover', 'background-size':'cover'});
         } else if(cur_weather_icon === "50d"  || cur_weather_icon === "50n") { // 50d mist 안개 wi-dust
             let weather_icon = document.getElementById("weather_icon_info")
             weather_icon.className = `wi`
             weather_icon.classList.add(`wi-dust`)
             
-            // $("#backimg").css({"background":"linear-gradient( rgba(0, 0, 0, 0.4),rgba(0, 0, 0, 0.4) ), url(../img/cloudy.jpg)", 'background-repeat' : 'no-repeat', 'background-position':'center center'});
             $("#backimg").css({"background":"linear-gradient( rgba(0, 0, 0, 0.4),rgba(0, 0, 0, 0.4) ), url(../img/cloudy.jpg) no-repeat center center fixed", '-webkit-background-size' : 'cover', '-moz-background-size':'cover', '-o-background-size':'cover', 'background-size':'cover'});
         }
-    
+        
+        // 옷 추천 및 문구 작성 코드
+        // data.main.temp.toFixed(1) // 현재 온도
+        // data.main.temp.toFixed(1)문자열이기 때문에 비교를 위해 숫자열로 바꿈 => Numbere
+        // 기온에 따른 조건문 & getElementsByClassName으로 class가져옴
+        // 이때 이름처럼 elements로 class를 여러개 가져오기 때문에 선택해야 함.
+        // 객체로 가져오기 때문에 사용한 첫번째 class 선택하기 위해 [0] 붙임
+        // 이후 innerText로 삽입. 이때 \n 으로 줄바꿈
+        let now_temp = Number(data.main.temp.toFixed(1))
+        if( now_temp >= 25){
+            
+            const desc_cloth = document.getElementsByClassName("comment")[0]
+            desc_cloth.innerText = "반팔 반바지 \n 최대한 얇게 입는 것이 좋습니다. \n #자외선_차단제 #양산"
 
+        } else if(25 > now_temp && 20 <= now_temp){
+
+            const desc_cloth = document.getElementsByClassName("comment")[0]
+            desc_cloth.innerText = "원피스 셔츠 \n 옷 코디하기 좋은 기온으로 조금 서늘합니다. \n #얇은_가디건"
+
+        } else if(20 > now_temp && 12 <= now_temp){
+
+            const desc_cloth = document.getElementsByClassName("comment")[0]
+            desc_cloth.innerText = "셔츠 맨투맨 \n  일교차가 커서 얇은 외투 착용을 권장합니다. \n #감기조심하세요"
+
+        } else if(12 > now_temp && 6 <= now_temp){
+
+            const desc_cloth = document.getElementsByClassName("comment")[0]
+            desc_cloth.innerText = "코트 후드집업 \n 몸이 따뜻하도록 내의를 착용해주세요. \n #트랜치_코트는_지금"
+            
+        } else if (6 > now_temp){
+            
+            const desc_cloth = document.getElementsByClassName("comment")[0]
+            desc_cloth.innerText = "패딩 긴바지 \n 패딩을 권장합니다. 최대한 껴입어주세요! \n #경량_패딩 #목도리 #기모_바지"
+        }
 
         // openweathermap API 아이콘 처리 (참고용) (이모티콘 코드와 같이 쓸 수 없음 둘 중 하나 선택)
         // const iconcode = data.weather[0].icon
