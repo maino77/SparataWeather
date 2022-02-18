@@ -51,34 +51,63 @@
                     </div>
                     <div class="form-group">
                         <label for="post-talk">날씨 이야기</label>
-                        <textarea class="form-control" id="post-talk" rows="3" style="resize: none" maxlength="50"
-                                  placeholder="50자 내외로 입력해주세요."></textarea>
+                        <textarea class="form-control" id="post-talk" rows="3" style="resize: none" maxlength="40"
+                                  placeholder="40자 내외로 입력해주세요."></textarea>
                     </div>
-                    <button type="submit" class="btn" onclick="postTalk()">남기기</button>
+                    <button type="submit" class="btn" onclick="postComment()">남기기</button>
                 </div>
-                <table class="comment-table" id="table-box">
-                    <tr>
-                        <td class="form-text"><small class="text-muted">아이디 <span class="date">2022.02.18</span></small>
-                            오늘 많이 춥네요
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="form-text"><small class="text-muted">아이디 <span class="date">2022.02.18</span></small>
-                            오늘 많이 춥네요
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="form-text"><small class="text-muted">아이디 <span class="date">2022.02.18</span></small>
-                            오늘 많이 춥네요
-                        </td>
-                    </tr>
-                </table>
-
+                <div class="comment-scroll">
+                    <table class="comment-table" id="table-box">
+                        <tr>
+                            <td class="form-text"><small class="text-muted">강원도 삼척시 <span
+                                    class="date">    2022.02.18</span></small>
+                                오늘 많이 춥네요
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="form-text"><small class="text-muted">서울시 강남구 <span
+                                    class="date">2022.02.18</span></small>
+                                서울은 따뜻해요!
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="form-text"><small class="text-muted">전라도 광주시 <span
+                                    class="date">2022.02.18</span></small>
+                                광주는 눈이 와요
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="form-text"><small class="text-muted">전라도 광주시 <span
+                                    class="date">2022.02.18</span></small>
+                                광주는 눈이 와요
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="form-text"><small class="text-muted">전라도 광주시 <span
+                                    class="date">2022.02.18</span></small>
+                                광주는 눈이 와요
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="form-text"><small class="text-muted">전라도 광주시 <span
+                                    class="date">2022.02.18</span></small>
+                                광주는 눈이 와요
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="form-text"><small class="text-muted">전라도 광주시 <span
+                                    class="date">2022.02.18</span></small>
+                                광주는 눈이 와요
+                            </td>
+                        </tr>
+                    </table>
+                </div>
             </div>
         </div>
     </div>
     <script type="text/javascript" src="./js/weather.js"></script>
     <script type="text/javascript" src="./js/date.js"></script>
+    <script type="text/javascript" src="js/comment_post.js"></script>
 
 </body>
 </html>
