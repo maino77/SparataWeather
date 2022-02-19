@@ -27,7 +27,7 @@ function postComment() {
 
             $.ajax({
                 type: "POST",
-                url: "/album/talk",
+                url: "/weather/comment",
                 data: {local_give: local, talk_give: talk, date_give: date},
                 success: function (response) {
                     alert(response["msg"]);
