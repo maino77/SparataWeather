@@ -6,6 +6,9 @@
         crossorigin="anonymous"></script>
 
 function postComment() {
+        let local = $("#post-local").val();
+        let talk = $("#post-talk").val();
+
         if ($('#post-local').val() == '') {
             alert('지역을 입력하세요!');
             return false;
@@ -14,8 +17,8 @@ function postComment() {
             alert('날씨 이야기를 입력하세요!');
             return false;
         } else {
-            let local = $("#post-local").val();
-            let talk = $("#post-talk").val();
+            local = $("#post-local").val();
+            talk = $("#post-talk").val();
 
             function getToday() {
                 var date = new Date();
