@@ -5,15 +5,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Document</title>
-    <link rel="stylesheet" href="./css/style.css">
-    <link rel="stylesheet" href="./css/mediaquery.css">
+    <title>오늘 어떻게 입지?</title>
+    <link rel="stylesheet" href="../static/style.css">
+    <link rel="stylesheet" href="../static/mediaquery.css">
 
     <!-- 날씨 아이콘 css -->
-    <link rel="stylesheet" href="./css/weather-icons-wind.css">
-    <link rel="stylesheet" href="./css/weather-icons-wind.min.css">
-    <link rel="stylesheet" href="./css/weather-icons.css">
-    <link rel="stylesheet" href="./css/weather-icons.min.css">
+    <link rel="stylesheet" href="../static/weather-icons-wind.css">
+    <link rel="stylesheet" href="../static/weather-icons-wind.min.css">
+    <link rel="stylesheet" href="../static/weather-icons.css">
+    <link rel="stylesheet" href="../static/weather-icons.min.css">
     <!-- jQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
@@ -105,9 +105,12 @@
             </div>
         </div>
     </div>
-    <script type="text/javascript" src="./js/comment_weather.js"></script>
-    <script type="text/javascript" src="./js/date.js"></script>
-    <script type="text/javascript" src="js/comment_post.js"></script>
+    <script src="{{ url_for('static', filename='comment_weather.js') }}" > </script>
+    <script src="{{ url_for('static', filename='comment_post.js') }}" > </script>
+    <script src="{{ url_for('static', filename='comment_show.js') }}" > </script>
+<!--    <script type="text/javascript" src="./js/comment_weather.js"></script>-->
+<!--    <script type="text/javascript" src="./js/date.js"></script>-->
+<!--    <script type="text/javascript" src="js/comment_post.js"></script>-->
 
 </body>
 </html>
