@@ -122,7 +122,7 @@ function onGeoOk(position){
             weather_icon.className = `wi`
             weather_icon.classList.add(`wi-cloud`)
             
-            $("#backimg").css({"background":"linear-gradient( rgba(0, 0, 0, 0.4),rgba(0, 0, 0, 0.4) ), url(../img/cloudy.jpg) no-repeat center center fixed", '-webkit-background-size' : 'cover', '-moz-background-size':'cover', '-o-background-size':'cover', 'background-size':'cover'});
+            $("#backimg").css({"background":"linear-gradient( rgba(0, 0, 0, 0.4),rgba(0, 0, 0, 0.4) ), url(..../../img/cloudy.jpg) no-repeat center center fixed", '-webkit-background-size' : 'cover', '-moz-background-size':'cover', '-o-background-size':'cover', 'background-size':'cover'});
 
         } else if(cur_weather_icon === "04d" || cur_weather_icon === "04n") { // 04d broken clouds 먹구름 wi-cloudy
             let weather_icon = document.getElementById("weather_icon_info")
@@ -210,8 +210,8 @@ function onGeoOk(position){
         } else if (6 > now_temp){
             const first_clothes = document.getElementsByClassName("first-clothes")[0]
             const second_clothes = document.getElementsByClassName("second-clothes")[0]
-            first_clothes.style.backgroundImage = "url(../img/winter_1.png)"
-            second_clothes.style.backgroundImage = "url(../img/winter_2.png)"
+            first_clothes.style.backgroundImage = `url(../../img/winter_1.png)`
+            second_clothes.style.backgroundImage = `url(../../img/winter_2.png)`
 
 
             const desc_cloth = document.getElementsByClassName("comment")[0]
