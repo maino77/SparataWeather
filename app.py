@@ -60,7 +60,7 @@ def write_comment():
 
 @app.route('/weather/comment', methods=['GET'])
 def show_comment():
-	comments = list(db.album.find({}, {'_id':False}))
+	comments = list(db.album.find({}, {'_id':False}).sort('date',-1))
 	return jsonify({'all_comments': comments})
 
 
