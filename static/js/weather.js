@@ -14,43 +14,43 @@ function onGeoOk(position){
 
         lat = change_lat
         lon = change_lon
-    } else if(selectVal == "서울"){
+    } else if(selectVal === "서울"){
         const change_lat = 37.583328
         const change_lon = 127
 
         lat = change_lat
         lon = change_lon
-    } else if(selectVal == "강릉"){
+    } else if(selectVal === "강릉"){
         const change_lat = 37.751853
         const change_lon = 128.8760574
 
         lat = change_lat
         lon = change_lon
-    } else if(selectVal == "대전"){
+    } else if(selectVal === "대전"){
         const change_lat = 36.321655
         const change_lon = 127.378953
 
         lat = change_lat
         lon = change_lon
-    } else if(selectVal == "대구"){
+    } else if(selectVal === "대구"){
         const change_lat = 35.798838
         const change_lon = 128.583052
 
         lat = change_lat
         lon = change_lon
-    } else if(selectVal == "광주"){
+    } else if(selectVal === "광주"){
         const change_lat = 35.1757811066707
         const change_lon = 126.870704892426
 
         lat = change_lat
         lon = change_lon
-    } else if(selectVal == "부산"){
+    } else if(selectVal === "부산"){
         const change_lat = 35.198362
         const change_lon = 129.053922
 
         lat = change_lat
         lon = change_lon
-    } else if(selectVal == "제주"){
+    } else if(selectVal === "제주"){
         const change_lat = 33.364805
         const change_lon = 126.542671
 
@@ -164,7 +164,7 @@ function onGeoOk(position){
         
         // 옷 추천 및 문구 작성 코드
         // data.main.temp.toFixed(1) // 현재 온도
-        // data.main.temp.toFixed(1)문자열이기 때문에 비교를 위해 숫자열로 바꿈 => Numbere
+        // data.main.temp.toFixed(1)문자열이기 때문에 비교를 위해 숫자열로 바꿈 => Number
         // 기온에 따른 조건문 & getElementsByClassName으로 class가져옴
         // 이때 이름처럼 elements로 class를 여러개 가져오기 때문에 선택해야 함.
         // 객체로 가져오기 때문에 사용한 첫번째 class 선택하기 위해 [0] 붙임
@@ -216,6 +216,11 @@ function onGeoOk(position){
 
             const desc_cloth = document.getElementsByClassName("comment")[0]
             desc_cloth.innerText = "점퍼 패딩 \n 패딩을 권장합니다. 최대한 껴입어주세요! \n #경량_패딩 #점퍼 #목도리"
+        } else {
+
+            const desc_cloth = document.getElementsByClassName("comment")[0]
+            desc_cloth.innerText = "정보를 불러올 수 없습니다."
+
         }
 
         // openweathermap API 아이콘 처리 (참고용) (이모티콘 코드와 같이 쓸 수 없음 둘 중 하나 선택)

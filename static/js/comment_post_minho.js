@@ -2,11 +2,11 @@ function postComment() {
         let local = $("#post-local").val();
         let talk = $("#post-talk").val();
 
-        if (local === '') {
+        if (local == '') {
             alert('지역을 입력하세요!');
             return false;
 
-        } else if (talk === '') {
+        } else if (talk == '') {
             alert('날씨 이야기를 입력하세요!');
             return false;
         } else {
