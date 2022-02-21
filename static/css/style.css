@@ -147,10 +147,6 @@ a {
     display: inline-block;
 }
 
-.comment {
-    margin: 10px;
-}
-
 .weather-table {
     margin: 0 20px 20px 20px;
     width: 400px;
@@ -257,6 +253,12 @@ tr {
 }
 
 .comment-scroll {
+    width: 400px;
+    height: 500px;
+    overflow: auto;
+}
+
+.comment-scroll-ok {
     width: 400px;
     height: 300px;
     overflow: auto;
