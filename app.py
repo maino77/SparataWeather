@@ -30,8 +30,7 @@ client = MongoClient('localhost', 27017)
 db = client.dbsparta
 
 
-@app.route('/index')
-
+@app.route('/')
 def index():
 	##로그인 기능이 들어오면 수정되어야할 부분
 	return render_template('index.html')
