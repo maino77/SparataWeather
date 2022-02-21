@@ -11,7 +11,7 @@ from flask import Flask, request, render_template, jsonify, session, redirect, u
 # 플라스크 인스턴스를 생성
 app = Flask(__name__)
 
-#Mongo DB연결
+# Mongo DB연결
 # 먼저 noSQL인 mogoDB를 다루기 위한 파이썬 라이브러리 Pymongo를 불러온다.
 # 그 후 DB연결
 # 1. MongoClient의 값으로 MongoDB 서버를 URL 파라미터로 입력
@@ -29,12 +29,12 @@ client = MongoClient('localhost', 27017)
 # db = client['mydb'] Dictionary를 인덱싱하는 형태로 대괄호 안에 DB명 문자열을 입력
 db = client.dbsparta
 
-@app.route('/index.html')
+@app.route('/index')
 def index():
 	##로그인 기능이 들어오면 수정되어야할 부분
 	return render_template('index.html')
 
-@app.route('/comment.html')
+@app.route('/comment')
 def comment():
 	##로그인 기능이 들어오면 수정되어야할 부분
 	return render_template('comment.html')
