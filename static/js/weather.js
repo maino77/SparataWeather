@@ -178,7 +178,7 @@ function onGeoOk(position){
             
             
             const desc_cloth = document.getElementsByClassName("comment")[0]
-            desc_cloth.innerText = "반팔 반바지 \n 최대한 얇게 입는 것이 좋습니다. \n #자외선_차단제 #양산"
+            desc_cloth.innerText = "최대한 얇게 입는 것이 좋습니다. \n #자외선_차단제 #양산"
 
         } else if(25 > now_temp && 20 <= now_temp){
             const first_clothes = document.getElementsByClassName("first-clothes")[0]
@@ -187,7 +187,7 @@ function onGeoOk(position){
             second_clothes.style.backgroundImage = "url(static/img/spring_2.png)"
 
             const desc_cloth = document.getElementsByClassName("comment")[0]
-            desc_cloth.innerText = "원피스 셔츠 \n 옷 코디하기 좋은 기온으로 조금 서늘합니다. \n #얇은_가디건"
+            desc_cloth.innerText = "옷 코디하기 좋은 기온으로 조금 서늘합니다. \n #얇은_가디건"
 
         } else if(20 > now_temp && 12 <= now_temp){
             const first_clothes = document.getElementsByClassName("first-clothes")[0]
@@ -196,7 +196,7 @@ function onGeoOk(position){
             second_clothes.style.backgroundImage = "url(static/img/fall_2.png)"
 
             const desc_cloth = document.getElementsByClassName("comment")[0]
-            desc_cloth.innerText = "셔츠 맨투맨 \n  일교차가 커서 얇은 외투 착용을 권장합니다. \n #감기조심하세요"
+            desc_cloth.innerText = "일교차가 커서 얇은 외투 착용을 권장합니다. \n #감기조심하세요"
 
         } else if(12 > now_temp && 6 <= now_temp){
             const first_clothes = document.getElementsByClassName("first-clothes")[0]
@@ -205,7 +205,7 @@ function onGeoOk(position){
             second_clothes.style.backgroundImage = "url(static/img/extra_2.png)"
 
             const desc_cloth = document.getElementsByClassName("comment")[0]
-            desc_cloth.innerText = "코트 후드집업 \n 몸이 따뜻하도록 내의를 착용해주세요. \n #트랜치_코트는_지금"
+            desc_cloth.innerText = "몸이 따뜻하도록 내의를 착용해주세요. \n #트랜치_코트는_지금"
             
         } else if (6 > now_temp){
             const first_clothes = document.getElementsByClassName("first-clothes")[0]
@@ -215,7 +215,7 @@ function onGeoOk(position){
 
 
             const desc_cloth = document.getElementsByClassName("comment")[0]
-            desc_cloth.innerText = "점퍼 패딩 \n 패딩을 권장합니다. 최대한 껴입어주세요! \n #경량_패딩 #점퍼 #목도리"
+            desc_cloth.innerText = "패딩을 권장합니다. 최대한 껴입어주세요! \n #경량_패딩 #점퍼 #목도리"
         } else {
 
             const desc_cloth = document.getElementsByClassName("comment")[0]
