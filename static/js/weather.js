@@ -108,58 +108,58 @@ function onGeoOk(position){
             weather_icon.classList.add(`wi-day-sunny`)
             
             // 배경화면 바꾸는 코드
-            $("#backimg").css({"background":"linear-gradient( rgba(0, 0, 0, 0.4),rgba(0, 0, 0, 0.4) ), url(../img/sunny.jpg) no-repeat center center fixed", '-webkit-background-size' : 'cover', '-moz-background-size':'cover', '-o-background-size':'cover', 'background-size':'cover'});
+            $("#backimg").css({"background":"linear-gradient( rgba(0, 0, 0, 0.4),rgba(0, 0, 0, 0.4) ), url(static/img/sunny.jpg) no-repeat center center fixed", '-webkit-background-size' : 'cover', '-moz-background-size':'cover', '-o-background-size':'cover', 'background-size':'cover'});
 
         } else if(cur_weather_icon === "02d"  || cur_weather_icon === "02n") { // 02d few clouds 구름 낀 해 wi-day-cloudy
             let weather_icon = document.getElementById("weather_icon_info")
             weather_icon.className = `wi`
             weather_icon.classList.add(`wi-day-cloudy`)
             
-            $("#backimg").css({"background":"linear-gradient( rgba(0, 0, 0, 0.4),rgba(0, 0, 0, 0.4) ), url(../img/sunny.jpg) no-repeat center center fixed", '-webkit-background-size' : 'cover', '-moz-background-size':'cover', '-o-background-size':'cover', 'background-size':'cover'});
+            $("#backimg").css({"background":"linear-gradient( rgba(0, 0, 0, 0.4),rgba(0, 0, 0, 0.4) ), url(static/img/sunny.jpg) no-repeat center center fixed", '-webkit-background-size' : 'cover', '-moz-background-size':'cover', '-o-background-size':'cover', 'background-size':'cover'});
 
         } else if(cur_weather_icon === "03d" || cur_weather_icon === "03n") { // 03d scattered clouds 구름 wi-cloud
             let weather_icon = document.getElementById("weather_icon_info")
             weather_icon.className = `wi`
             weather_icon.classList.add(`wi-cloud`)
             
-            $("#backimg").css({"background":"linear-gradient( rgba(0, 0, 0, 0.4),rgba(0, 0, 0, 0.4) ), url(..../../img/cloudy.jpg) no-repeat center center fixed", '-webkit-background-size' : 'cover', '-moz-background-size':'cover', '-o-background-size':'cover', 'background-size':'cover'});
+            $("#backimg").css({"background":"linear-gradient( rgba(0, 0, 0, 0.4),rgba(0, 0, 0, 0.4) ), url(static/img/cloudy.jpg) no-repeat center center fixed", '-webkit-background-size' : 'cover', '-moz-background-size':'cover', '-o-background-size':'cover', 'background-size':'cover'});
 
         } else if(cur_weather_icon === "04d" || cur_weather_icon === "04n") { // 04d broken clouds 먹구름 wi-cloudy
             let weather_icon = document.getElementById("weather_icon_info")
             weather_icon.className = `wi`
             weather_icon.classList.add(`wi-cloudy`)
             
-            $("#backimg").css({"background":"linear-gradient( rgba(0, 0, 0, 0.4),rgba(0, 0, 0, 0.4) ), url(../img/cloudy.jpg) no-repeat center center fixed", '-webkit-background-size' : 'cover', '-moz-background-size':'cover', '-o-background-size':'cover', 'background-size':'cover'});
+            $("#backimg").css({"background":"linear-gradient( rgba(0, 0, 0, 0.4),rgba(0, 0, 0, 0.4) ), url(static/img/cloudy.jpg) no-repeat center center fixed", '-webkit-background-size' : 'cover', '-moz-background-size':'cover', '-o-background-size':'cover', 'background-size':'cover'});
         } else if(cur_weather_icon === "09d" || cur_weather_icon === "09n") { // 09d shower rain 구름 비 wi-rain
             let weather_icon = document.getElementById("weather_icon_info")
             weather_icon.className = `wi`
             weather_icon.classList.add(`wi-rain`)
             
-            $("#backimg").css({"background":"linear-gradient( rgba(0, 0, 0, 0.4),rgba(0, 0, 0, 0.4) ), url(../img/rain.jpg) no-repeat center center fixed", '-webkit-background-size' : 'cover', '-moz-background-size':'cover', '-o-background-size':'cover', 'background-size':'cover'});
+            $("#backimg").css({"background":"linear-gradient( rgba(0, 0, 0, 0.4),rgba(0, 0, 0, 0.4) ), url(static/img/rain.jpg) no-repeat center center fixed", '-webkit-background-size' : 'cover', '-moz-background-size':'cover', '-o-background-size':'cover', 'background-size':'cover'});
         } else if(cur_weather_icon === "10d" || cur_weather_icon === "10n") { // 10d 비 (해, 비) wi-umbrella
             let weather_icon = document.getElementById("weather_icon_info")
             weather_icon.className = `wi`
             weather_icon.classList.add(`wi-umbrella`)
             
-            $("#backimg").css({"background":"linear-gradient( rgba(0, 0, 0, 0.4),rgba(0, 0, 0, 0.4) ), url(../img/rain.jpg) no-repeat center center fixed", '-webkit-background-size' : 'cover', '-moz-background-size':'cover', '-o-background-size':'cover', 'background-size':'cover'});
+            $("#backimg").css({"background":"linear-gradient( rgba(0, 0, 0, 0.4),rgba(0, 0, 0, 0.4) ), url(static/img/rain.jpg) no-repeat center center fixed", '-webkit-background-size' : 'cover', '-moz-background-size':'cover', '-o-background-size':'cover', 'background-size':'cover'});
         } else if(cur_weather_icon === "11d" || cur_weather_icon === "11n") { // 11d 번개, 천둥 wi-lightning
             let weather_icon = document.getElementById("weather_icon_info")
             weather_icon.className = `wi`
             weather_icon.classList.add(`wi-lightning`)
             
-            $("#backimg").css({"background":"linear-gradient( rgba(0, 0, 0, 0.4),rgba(0, 0, 0, 0.4) ), url(../img/rain.jpg) no-repeat center center fixed", '-webkit-background-size' : 'cover', '-moz-background-size':'cover', '-o-background-size':'cover', 'background-size':'cover'});
+            $("#backimg").css({"background":"linear-gradient( rgba(0, 0, 0, 0.4),rgba(0, 0, 0, 0.4) ), url(static/img/rain.jpg) no-repeat center center fixed", '-webkit-background-size' : 'cover', '-moz-background-size':'cover', '-o-background-size':'cover', 'background-size':'cover'});
         } else if(cur_weather_icon === "13d" || cur_weather_icon === "13n") { // 13d 눈 wi-snowflake-cold
             let weather_icon = document.getElementById("weather_icon_info")
             weather_icon.className = `wi`
             weather_icon.classList.add(`wi-snowflake-cold`)
             
-            $("#backimg").css({"background":"linear-gradient( rgba(0, 0, 0, 0.4),rgba(0, 0, 0, 0.4) ), url(../img/snow.jpg) no-repeat center center fixed", '-webkit-background-size' : 'cover', '-moz-background-size':'cover', '-o-background-size':'cover', 'background-size':'cover'});
+            $("#backimg").css({"background":"linear-gradient( rgba(0, 0, 0, 0.4),rgba(0, 0, 0, 0.4) ), url(static/img/snow.jpg) no-repeat center center fixed", '-webkit-background-size' : 'cover', '-moz-background-size':'cover', '-o-background-size':'cover', 'background-size':'cover'});
         } else if(cur_weather_icon === "50d"  || cur_weather_icon === "50n") { // 50d mist 안개 wi-dust
             let weather_icon = document.getElementById("weather_icon_info")
             weather_icon.className = `wi`
             weather_icon.classList.add(`wi-dust`)
             
-            $("#backimg").css({"background":"linear-gradient( rgba(0, 0, 0, 0.4),rgba(0, 0, 0, 0.4) ), url(../img/cloudy.jpg) no-repeat center center fixed", '-webkit-background-size' : 'cover', '-moz-background-size':'cover', '-o-background-size':'cover', 'background-size':'cover'});
+            $("#backimg").css({"background":"linear-gradient( rgba(0, 0, 0, 0.4),rgba(0, 0, 0, 0.4) ), url(static/img/cloudy.jpg) no-repeat center center fixed", '-webkit-background-size' : 'cover', '-moz-background-size':'cover', '-o-background-size':'cover', 'background-size':'cover'});
         }
         
         // 옷 추천 및 문구 작성 코드
@@ -173,8 +173,8 @@ function onGeoOk(position){
         if( now_temp >= 25){
             const first_clothes = document.getElementsByClassName("first-clothes")[0]
             const second_clothes = document.getElementsByClassName("second-clothes")[0]
-            first_clothes.style.backgroundImage = "url(../img/summer_1.png)"
-            second_clothes.style.backgroundImage = "url(../img/summer_2.png)"
+            first_clothes.style.backgroundImage = "url(static/img/summer_1.png)"
+            second_clothes.style.backgroundImage = "url(static/img/summer_2.png)"
             
             
             const desc_cloth = document.getElementsByClassName("comment")[0]
@@ -183,8 +183,8 @@ function onGeoOk(position){
         } else if(25 > now_temp && 20 <= now_temp){
             const first_clothes = document.getElementsByClassName("first-clothes")[0]
             const second_clothes = document.getElementsByClassName("second-clothes")[0]
-            first_clothes.style.backgroundImage = "url(../img/spring_1.png)"
-            second_clothes.style.backgroundImage = "url(../img/spring_2.png)"
+            first_clothes.style.backgroundImage = "url(static/img/spring_1.png)"
+            second_clothes.style.backgroundImage = "url(static/img/spring_2.png)"
 
             const desc_cloth = document.getElementsByClassName("comment")[0]
             desc_cloth.innerText = "원피스 셔츠 \n 옷 코디하기 좋은 기온으로 조금 서늘합니다. \n #얇은_가디건"
@@ -192,8 +192,8 @@ function onGeoOk(position){
         } else if(20 > now_temp && 12 <= now_temp){
             const first_clothes = document.getElementsByClassName("first-clothes")[0]
             const second_clothes = document.getElementsByClassName("second-clothes")[0]
-            first_clothes.style.backgroundImage = "url(../img/fall_1.png)"
-            second_clothes.style.backgroundImage = "url(../img/fall_2.png)"
+            first_clothes.style.backgroundImage = "url(static/img/fall_1.png)"
+            second_clothes.style.backgroundImage = "url(static/img/fall_2.png)"
 
             const desc_cloth = document.getElementsByClassName("comment")[0]
             desc_cloth.innerText = "셔츠 맨투맨 \n  일교차가 커서 얇은 외투 착용을 권장합니다. \n #감기조심하세요"
@@ -201,8 +201,8 @@ function onGeoOk(position){
         } else if(12 > now_temp && 6 <= now_temp){
             const first_clothes = document.getElementsByClassName("first-clothes")[0]
             const second_clothes = document.getElementsByClassName("second-clothes")[0]
-            first_clothes.style.backgroundImage = "url(../img/extra_1.png)"
-            second_clothes.style.backgroundImage = "url(../img/extra_2.png)"
+            first_clothes.style.backgroundImage = "url(static/img/extra_1.png)"
+            second_clothes.style.backgroundImage = "url(static/img/extra_2.png)"
 
             const desc_cloth = document.getElementsByClassName("comment")[0]
             desc_cloth.innerText = "코트 후드집업 \n 몸이 따뜻하도록 내의를 착용해주세요. \n #트랜치_코트는_지금"
@@ -210,8 +210,8 @@ function onGeoOk(position){
         } else if (6 > now_temp){
             const first_clothes = document.getElementsByClassName("first-clothes")[0]
             const second_clothes = document.getElementsByClassName("second-clothes")[0]
-            first_clothes.style.backgroundImage = `url(../../img/winter_1.png)`
-            second_clothes.style.backgroundImage = `url(../../img/winter_2.png)`
+            first_clothes.style.backgroundImage = `url(static/img/winter_1.png)`
+            second_clothes.style.backgroundImage = `url(static/img/winter_2.png)`
 
 
             const desc_cloth = document.getElementsByClassName("comment")[0]
