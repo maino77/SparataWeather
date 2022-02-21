@@ -29,12 +29,12 @@ client = MongoClient('localhost', 27017)
 # db = client['mydb'] Dictionary를 인덱싱하는 형태로 대괄호 안에 DB명 문자열을 입력
 db = client.dbsparta
 
-@app.route('/index.html')
+@app.route('/')
 def index():
 	##로그인 기능이 들어오면 수정되어야할 부분
 	return render_template('index.html')
 
-@app.route('/comment.html')
+@app.route('/comment')
 def comment():
 	##로그인 기능이 들어오면 수정되어야할 부분
 	return render_template('comment.html')
