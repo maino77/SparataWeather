@@ -40,6 +40,10 @@ def comment():
 	##로그인 기능이 들어오면 수정되어야할 부분
 	return render_template('comment.html')
 
+@app.route('/login')
+def login():
+	return render_template('login.html')
+
 
 ###### 코멘트 API  생성 ########
 @app.route('/weather/comment', methods=['POST'])

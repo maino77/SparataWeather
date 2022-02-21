@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
+    <script>
+// cf85ee8f7adc5ad08bc836ff21cc4a18
+    window.Kakao.init("cf85ee8f7adc5ad08bc836ff21cc4a18");
+
+    function kakaoLogin() {
+        window.Kakao.Auth.login({
+            // 정보를 받아오는 범위
+            scope: 'profile, account_email, gender'
+            successe: function(authObj){
+                console.log(authObj);
+                window.Kakao.API.request({
+                    url:'/v2/user/me',
+
+                })
+            }
+        })
+    }
+    </script>
+</body>
+</html>

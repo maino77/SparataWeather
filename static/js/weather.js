@@ -1,7 +1,7 @@
 const API_KEY = "9730934379c4806648360d3cc00d8894";
 
 function onGeoOk(position){
-
+    console.log("성공")
     var lat = position.coords.latitude;
     var lon = position.coords.longitude;
 
@@ -240,6 +240,7 @@ function onGeoOk(position){
 
 // getCurrentPosition이 실패했을 때 함수
 function onGeoError(){
+    console.log("실패")
     alert("위치를 찾을 수 없어 날씨를 제공할 수 없습니다.")
 }
 
