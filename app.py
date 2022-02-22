@@ -2,7 +2,6 @@
 # render_template()는 웹 서버에서 페이지를 랜더링
 # render_template() 규칙은 templates라는 폴더 생성 후 그 안에 html 넣음
 # css, js는 static이라는 폴더에 넣어줘야 flask에서 인식
-
 from flask import Flask, request, render_template, jsonify, redirect, url_for
 
 
@@ -132,7 +131,6 @@ def api_login():
    # 찾지 못하면
    else:
       return jsonify({'result': 'fail', 'msg': '아이디/비밀번호가 일치하지 않습니다.'})
-
 
 # [회원전용]
 @app.route('/index_ok')
