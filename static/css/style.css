@@ -50,11 +50,11 @@ html {
 }
 
 
-  /* body의 기본 패딩, 마진 제거 */
-  body{
-      margin: 0;
-      padding: 0;
-  }
+/* body의 기본 패딩, 마진 제거 */
+body{
+  margin: 0;
+  padding: 0;
+}
 
 /*모든 a태그 효과 삭제*/
 a {
@@ -67,7 +67,6 @@ a {
     position: fixed;
     left: 0px;
     bottom: 0px;
-    color: #F5F2E7;
 }
 
 .now-temp {
@@ -93,8 +92,6 @@ a {
     text-align: center;
     margin-top: 50px;
     /*height: 100%;*/
-
-    color: #F5F2E7;
 }
 
 .nav {
@@ -161,7 +158,6 @@ a {
 }
 
 tr {
-    width: 300px;
     height: 50px;
 }
 
@@ -187,11 +183,14 @@ tr {
     padding: 10px 0;
     border: none;
     background: none;
-    color: #F5F2E7;
 }
 
 .cities option {
-    background-color: #19282F;
+    background-color: black;
+}
+
+.cities:focus-visible {
+    outline: none;
 }
 
 /*이야기 설정*/
@@ -232,12 +231,13 @@ tr {
 .btn {
     background: none;
     border: 1px solid;
-    border-radius: 5px;
+    border-radius: 8px;
     padding: 8px;
 }
 
 .btn:hover {
     cursor: pointer;
+    background-color: #f5f2e740
 }
 
 .form-text {
@@ -254,13 +254,13 @@ tr {
 
 .comment-scroll {
     width: 400px;
-    height: 500px;
+    height: 70vh;
     overflow: auto;
 }
 
 .comment-scroll-ok {
     width: 400px;
-    height: 300px;
+    height: 40vh;
     overflow: auto;
 }
 
