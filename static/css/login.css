@@ -5,11 +5,11 @@
 
 /*아이디 비밀번호 입력창*/
 .form-group {
-    width: 220px;
+    width: 300px;
 }
 
 .form-control {
-    width: 200px;
+    width: 280px;
 }
 
 /*로그인 회원가입 버튼*/
@@ -23,6 +23,6 @@
 
 /*회원가입 유효성 체크 문구*/
 .check-text {
-    font-size: 0.6rem;
+    font-size: 0.8rem;
     margin-left: 2px;
 }
