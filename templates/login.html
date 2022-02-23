@@ -64,15 +64,44 @@
                 </div>
 
                 <div class="login-api">
-                    <a href="https://kauth.kakao.com/oauth/authorize?client_id=d860d38c992ca8bf5f07dcc3fd5122b9&redirect_uri=http://localhost:9090/member/auth/kakao/callback&response_type=code"><img
+<!--                    <a href="https://kauth.kakao.com/oauth/authorize?client_id=d860d38c992ca8bf5f07dcc3fd5122b9&redirect_uri=http://localhost:9090/member/auth/kakao/callback&response_type=code"><img-->
+<!--                            src="../static/img/KakaoTalk.png"></a>-->
+                    <a href="https://kauth.kakao.com/oauth/authorize?client_id=e1f5a9c104686b224ba6a8dc09bcbbbd&redirect_uri=http://localhost:5000/index_ok&response_type=code"><img
                             src="../static/img/KakaoTalk.png"></a>
+<!--                    REST API를 사용한 방식. id는 발급 받은 REST API 키고, redirect_uri는 카카오쪽에 미리 입력해놓은 주소입니다!-->
+
+                    <a href="javascript:kakaoLogin()"><img src="../static/img/KakaoTalk.png"></a>
+<!--                    Javascript를 사용한 방식. script 안에 발급 받은 JavaScript 키 적어 놓았습니다.-->
                 </div>
             </div>
 
         </div>
     </div>
 </div>
-<script src="{{ url_for('static', filename='js/loading.js') }}" > </script>
+<script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
+<script>
+    //f48f0825255d7530c291673f42bfa73d
+    //JavaScript 키
+    window.Kakao.init("f48f0825255d7530c291673f42bfa73d")
+
+    function kakaoLogin() {
+        window.Kakao.Auth.login({
+           scope:'profile_nickname, account_email',
+            success: function(authObj){
+               console.log(authObj);
+               window.Kakao.API.request({
+                   url:'/v2/user/me',
+                   success: res => {
+                       const kakao_account = res.kakao_account;
+                       console.log(kakao_account);
+                       //콘솔창에 정보 제공 받는 닉네임과 카카오 이메일이 뜹니다.
+                   }
+               });
+            }
+        });
+    }
+</script>
+<!--<script src="{{ url_for('static', filename='js/loading.js') }}" > </script>-->
 <script src="{{ url_for('static', filename='js/login.js') }}" > </script>
 
 </body>
