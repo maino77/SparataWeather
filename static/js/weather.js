@@ -51,8 +51,8 @@ function onGeoOk(position){
         lat = change_lat
         lon = change_lon
     } else if(selectVal === "제주"){
-        const change_lat = 33.364805
-        const change_lon = 126.542671
+        const change_lat = 33.5101562
+        const change_lon = 126.4861157
 
         lat = change_lat
         lon = change_lon
