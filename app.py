@@ -2,7 +2,7 @@
 # render_template()는 웹 서버에서 페이지를 랜더링
 # render_template() 규칙은 templates라는 폴더 생성 후 그 안에 html 넣음
 # css, js는 static이라는 폴더에 넣어줘야 flask에서 인식
-from flask import Flask, request, render_template, jsonify, redirect, url_for
+from flask import Flask, request, render_template, jsonify, redirect, url_for, make_response
 
 
 # 플라스크 객체 생성
@@ -10,11 +10,12 @@ from flask import Flask, request, render_template, jsonify, redirect, url_for
 # 플라스크 인스턴스를 생성
 app = Flask(__name__)
 
-# flask, pymongo, PyJWT 패키지 설치
+
+# flask, pymongo, PyJWT, make_response, requests 패키지 설치
 # hashlib 별다른 설치 없이 import
 # redirect, url_for 마찬가지로 설치 없이 from flask에 import
 
-import hashlib, jwt, datetime
+import hashlib, jwt, datetime, requests
 
 m = hashlib.sha256()
 m.update('Life is too short'.encode('utf-8'))
@@ -99,7 +100,6 @@ def api_register():
 
 # [로그인 API]
 # id, pw를 받아서 맞춰보고, 토큰을 만들어 발급합니다.
-SECRET_KEY = 'WEATHER'
 @app.route('/api/login', methods=['POST'])
 def api_login():
    id_receive = request.form['id_give']
@@ -113,24 +113,12 @@ def api_login():
 
    # 찾으면 JWT 토큰을 만들어 발급합니다.
    if result is not None:
-      # JWT 토큰에는, payload와 시크릿키가 필요합니다.
-      # 시크릿키가 있어야 토큰을 디코딩(=풀기) 해서 payload 값을 볼 수 있습니다.
-      # 아래에선 id와 exp를 담았습니다. 즉, JWT 토큰을 풀면 유저ID 값을 알 수 있습니다.
-      # exp에는 만료시간을 넣어줍니다. 만료시간이 지나면, 시크릿키로 토큰을 풀 때 만료되었다고 에러가 납니다.
-      payload = {
-      'id': id_receive,
-      'exp': datetime.datetime.utcnow() + datetime.timedelta(seconds=30) #언제까지 유효한지
-      }
-
-      #jwt를 암호화
-      # token = jwt.encode(payload, SECRET_KEY, algorithm='HS256').decode('utf-8')
-      token = jwt.encode(payload, SECRET_KEY, algorithm='HS256')
-
-      # token을 줍니다.
-      return jsonify({'result': 'success', 'token': token})
+        # 토큰을 만드는 함수는 따로 분리했습니다.
+      return jsonify({'result': 'success', 'token': get_jwt_token(id_receive)})
    # 찾지 못하면
    else:
       return jsonify({'result': 'fail', 'msg': '아이디/비밀번호가 일치하지 않습니다.'})
+
 
 # [회원전용]
 @app.route('/index_ok')
@@ -156,6 +144,76 @@ def comment_ok():
       return redirect(url_for("login", msg="로그인 시간이 만료되었습니다."))
    except jwt.exceptions.DecodeError:
       return redirect(url_for("login", msg="로그인 정보가 존재하지 않습니다."))
+
+
+# [카카오 로그인 API]
+@app.route('/oauth/callback', methods=['GET'])
+def oauth():
+    # code는 index.html에 카카오 버튼 url을 보면 알 수 있습니다. 버튼 url에 만든사람 인증id, return uri이 명시되어 있습니다.
+    # 사용자 로그인에 성공하면 로그인 한 사람의 코드를 발급해줍니다.
+    code = request.args.get('code')
+
+    # 그 코드를 이용해 서버에 토큰을 요청해야 합니다. 아래는 POST 요청을 위한 header와 body입니다.
+    client_id = 'e1f5a9c104686b224ba6a8dc09bcbbbd'
+    redirect_uri = 'http://localhost:5000/oauth/callback'
+    token_url = 'https://kauth.kakao.com/oauth/token'
+    token_headers = {
+        'Content-type': 'application/x-www-form-urlencoded;charset=utf-8'
+    }
+    data = {
+        'grant_type': 'authorization_code',
+        'client_id': client_id,
+        'redirect_uri': redirect_uri,
+        'code': code
+    }
+    response = requests.post(url=token_url, headers=token_headers, data=data)
+    token = response.json()  # POST 요청에 성공하면 return value를 JSON 형식으로 파싱해서 담아줍니다.
+
+    info_url = 'https://kapi.kakao.com/v2/user/me'
+    info_headers = {
+        'Authorization': 'Bearer ' + token['access_token'],
+        'Content-type': 'application/x-www-form-urlencoded;charset=utf-8'
+    }
+    info_response = requests.post(url=info_url, headers=info_headers)
+    infos = info_response.json()
+
+    kakao_id = infos['kakao_account']['email'].split('@')[0] # id로 저장하기 위해 메일 도메인의 id만 출력
+    kakao_name = infos['properties']['nickname']
+
+    exist = bool(db.user.find_one({'id': kakao_id}))
+    if exist is False:
+        doc = {
+            'id': kakao_id,
+            'nick': kakao_name
+        }
+        db.user.insert_one(doc)
+    result = db.user.find_one({'id': kakao_id})     
+    # return jsonify({'result': 'success', 'token': get_jwt_token(kakao_id)})
+    # resp = make_response(render_template('index_ok.html', nickname=result['nick']))
+    resp = make_response(redirect(url_for('index_ok')))
+    token = get_jwt_token(kakao_id)
+    resp.set_cookie('mytoken', token)
+    return resp
+
+
+# [토큰 발급 API]
+# JWT 토큰을 만들 때 필요한 비밀문자열입니다. 아무거나 입력해도 괜찮습니다.
+SECRET_KEY = 'WEATHER'
+def get_jwt_token(user_id):
+    # JWT 토큰에는, payload와 시크릿키가 필요합니다.
+    # 시크릿키가 있어야 토큰을 디코딩(=풀기) 해서 payload 값을 볼 수 있습니다.
+    # 아래에선 id와 exp를 담았습니다. 즉, JWT 토큰을 풀면 유저ID 값을 알 수 있습니다.
+    # exp에는 만료시간을 넣어줍니다. 만료시간이 지나면, 시크릿키로 토큰을 풀 때 만료되었다고 에러가 납니다.
+    payload = {
+        'id': user_id,
+        'exp': datetime.datetime.utcnow() + datetime.timedelta(seconds=180) #언제까지 유효한지
+    }
+    token = jwt.encode(payload, SECRET_KEY, algorithm='HS256')  # 토큰을 발급하고
+
+    # response = make_response(redirect(url_for('main_page')))  # 쿠키를 저장해줄 페이지 지정(?)
+    # response.set_cookie(TOKEN_NAME, token)  # 메인페이지 기준으로 쿠키 설정(?)
+    return token
+
 
 if __name__ == '__main__':
     app.run('0.0.0.0', port=5000, debug=True)
